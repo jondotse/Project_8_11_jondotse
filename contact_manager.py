@@ -13,6 +13,10 @@ class ContactManager:
     def __init__(self, username):
         self.username = username
         self.contacts = load_contacts(username)
+        self.contacts = {
+            name: Contact(data['name'], data['phone'])
+            for name, data in self.contacts.items()
+        }
 
     def add_contact(self, name, phone):
         new_contact = Contact(name, phone)

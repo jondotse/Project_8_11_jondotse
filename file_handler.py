@@ -19,6 +19,7 @@ def save_contacts(username, contacts):
     filepath = f"contacts_{username}.json"
     try:
         with open(filepath, 'w') as user:
-            json.dump(contacts, user)
+            json.dump({name: {'name': contact.name, 'phone': contact.phone}
+            for name, contact in contacts.items()}, user)
     except Exception as e:
         print("Error saving contacts.")
