@@ -9,7 +9,9 @@ Date: 07/16/26
 from contact import Contact
 from file_handler import load_contacts, save_contacts
 
+
 class ContactManager:
+    """Load name and phone of a contact into username"""
     def __init__(self, username):
         self.username = username
         self.contacts = load_contacts(username)
@@ -17,7 +19,7 @@ class ContactManager:
             name: Contact(data['name'], data['phone'])
             for name, data in self.contacts.items()
         }
-
+    
     def add_contact(self, name, phone):
         new_contact = Contact(name, phone)
         self.contacts[name] = new_contact

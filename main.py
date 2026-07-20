@@ -71,7 +71,7 @@ while True:
             print("This contact does not exist.\n")
 
     elif user_input == 5:
-        print("Goodbye.")
+        print(f"Goodbye, {username}!")
         break
 
     else:
